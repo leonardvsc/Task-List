@@ -42,6 +42,7 @@ btnAddTarefa.addEventListener("click", function () {
 });
 
 inputTarefa.addEventListener("keypress", function (e) {
+  // Quando estiver no input e pressionar uma tecla
   // Se a tecla pressionada for ENTER
   if (e.keyCode === 13) {
     if (!inputTarefa.value) return; // Se o input estiver vazio, retorna
