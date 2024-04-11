@@ -12,5 +12,5 @@
 </ol>
 
 <p align="center">
-  <img alt="Preview do projeto desenvolvido." src=".github/print1.jpg" width="100%">
+  <img alt="Preview do projeto desenvolvido." src=".github/print1.png" width="100%">
 </p>
