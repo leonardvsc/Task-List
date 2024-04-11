@@ -6,7 +6,6 @@ const tarefas = document.querySelector(".tarefas");
 document.addEventListener("DOMContentLoaded", function () {
   const tarefas = localStorage.getItem("tarefas");
   const listaDeTarefas = JSON.parse(tarefas);
-  console.log(listaDeTarefas);
 
   for (let tarefa of listaDeTarefas) {
     criaTarefa(tarefa);
@@ -61,6 +60,7 @@ document.addEventListener("click", function (e) {
   // Se o elemento tiver a classe btn-apagar
   if (element.classList.contains("btn-apagar")) {
     element.parentElement.remove(); // Remove o elemento pai do elemento que o disparou
+    salvarTarefas(); // Salva as tarefas atualizadas depois de apagar uma tarefa
   }
 });
 
