@@ -4,8 +4,7 @@
 
 <h2>Como usar</h2>
 <ol>
-  <li>Clone o repositório para a sua máquina local.</li>
-  <li>Abra o arquivo index.html em seu navegador.</li>
+  <li>Acesse o link https://youtasklist.vercel.app/</li>
   <li>Adicione suas tarefas na caixa de texto "Add task".</li>
   <li>Clique no botão "+" ou tecle "ENTER" para adicionar a tarefa à lista.</li>
   <li>Quando uma tarefa for concluída, clique no botão de lixeira ao lado dela para removê-la da lista.</li>
