@@ -4,13 +4,7 @@ const btnAddTarefa = document.querySelector(".btn-add-tarefa");
 const tarefas = document.querySelector(".tarefas");
 
 document.addEventListener("DOMContentLoaded", function () {
-  const tarefas = localStorage.getItem("tarefas");
-  const listaDeTarefas = JSON.parse(tarefas);
-
-  for (let tarefa of listaDeTarefas) {
-    criaTarefa(tarefa);
-  }
-
+  carregaTarefasSalvas();
   inputTarefa.focus();
 });
 
@@ -76,4 +70,13 @@ function salvarTarefas() {
 
   const tarefasJSON = JSON.stringify(listaDeTarefas); // Transforma a lista de tarefas em uma string JSON
   localStorage.setItem("tarefas", tarefasJSON); // Salva a string JSON no localStorage
+}
+
+function carregaTarefasSalvas() {
+  const tarefas = localStorage.getItem("tarefas"); // Pega as tarefas do localStorage
+  const listaDeTarefas = JSON.parse(tarefas); // Transforma a string JSON em uma lista array
+  for (let tarefa of listaDeTarefas) {
+    // Para cada tarefa na lista de tarefas
+    criaTarefa(tarefa); // Cria uma tarefa
+  }
 }
