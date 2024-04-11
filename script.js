@@ -53,8 +53,12 @@ document.addEventListener("click", function (e) {
   const element = e.target; // Seleciona o elemento que disparou o evento click
   // Se o elemento tiver a classe btn-apagar
   if (element.classList.contains("btn-apagar")) {
-    element.parentElement.remove(); // Remove o elemento pai do elemento que o disparou
-    salvarTarefas(); // Salva as tarefas atualizadas depois de apagar uma tarefa
+    // Pergunta se realmente quer apagar a tarefa
+    const confirmar = confirm("Are you sure you want to delete this task?");
+    if (confirmar) {
+      element.parentElement.remove(); // Remove o elemento pai do elemento que o disparou
+      salvarTarefas(); // Salva as tarefas atualizadas depois de apagar uma tarefa
+    }
   }
 });
 
