@@ -4,6 +4,14 @@ const btnAddTarefa = document.querySelector(".btn-add-tarefa");
 const tarefas = document.querySelector(".tarefas");
 
 document.addEventListener("DOMContentLoaded", function () {
+  const tarefas = localStorage.getItem("tarefas");
+  const listaDeTarefas = JSON.parse(tarefas);
+  console.log(listaDeTarefas);
+
+  for (let tarefa of listaDeTarefas) {
+    criaTarefa(tarefa);
+  }
+
   inputTarefa.focus();
 });
 
@@ -67,6 +75,5 @@ function salvarTarefas() {
   }
 
   const tarefasJSON = JSON.stringify(listaDeTarefas); // Transforma a lista de tarefas em uma string JSON
-  console.log(listaDeTarefas);
-  console.log(tarefasJSON);
+  localStorage.setItem("tarefas", tarefasJSON); // Salva a string JSON no localStorage
 }
