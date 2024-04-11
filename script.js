@@ -32,6 +32,7 @@ function criaTarefa(textoInput) {
   tarefas.appendChild(li);
   criaBotaoApagar(li);
   limpaInput();
+  salvarTarefas();
 }
 
 btnAddTarefa.addEventListener("click", function () {
@@ -40,9 +41,10 @@ btnAddTarefa.addEventListener("click", function () {
 });
 
 inputTarefa.addEventListener("keypress", function (e) {
+  // Se a tecla pressionada for ENTER
   if (e.keyCode === 13) {
-    if (!inputTarefa.value) return;
-    criaTarefa(inputTarefa.value);
+    if (!inputTarefa.value) return; // Se o input estiver vazio, retorna
+    criaTarefa(inputTarefa.value); // Se o input tiver conteúdo, cria uma tarefa
   }
 });
 
@@ -53,3 +55,18 @@ document.addEventListener("click", function (e) {
     element.parentElement.remove(); // Remove o elemento pai do elemento que o disparou
   }
 });
+
+function salvarTarefas() {
+  const liTarefas = tarefas.querySelectorAll("li"); // Seleciona todas as tarefas (li) da lista de tarefas (ul)
+  const listaDeTarefas = [];
+
+  // Para cada tarefa (li) da lista de tarefas (ul)
+  for (let tarefa of liTarefas) {
+    let tarefaTexto = tarefa.innerText; // Seleciona o texto da tarefa (li)
+    listaDeTarefas.push(tarefaTexto.trim()); // Adiciona o texto da tarefa (li) a uma lista e retira os espaços em brancos do começo e do fim
+  }
+
+  const tarefasJSON = JSON.stringify(listaDeTarefas); // Transforma a lista de tarefas em uma string JSON
+  console.log(listaDeTarefas);
+  console.log(tarefasJSON);
+}
