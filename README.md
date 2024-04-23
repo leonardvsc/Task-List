@@ -1,4 +1,4 @@
-<h1>You Task List</h1>
+<h1>YouTaskList</h1>
 
 <p>Este é um projeto simples de um painel de tarefas. Nele, você pode adicionar suas tarefas, que ficam salvas em uma lista com um botão para apagar quando a tarefa for concluída.</p>
 
